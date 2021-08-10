@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+
+$background-color: hsl(185, 75%, 39%);
+$primary-text-color: hsl(229, 23%, 23%);
+$secondary-text-color: hsl(227, 10%, 46%);
+$tertiary-text-color: hsl(0, 0%, 59%);
+
+$font-size: 18px;
+$font-family: 'Kumbh Sans', sans-serif;
+$font-weight: (
+  regular: 400,
+  bold: 700
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: $font-family;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../images/bg-pattern-top.svg), url(../../images/bg-pattern-bottom.svg);
+  background-color: $background-color;
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+  background-size: 200vh, 200vh;
+  background-position-y: -110vh, 45vh;
+  background-position-x: -45vw, 40vw;
+  color: $primary-text-color;
+  overflow-x: hidden;
+
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 15px;
+
+  & > img {
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 5em;
+  }
+
+  .profile-container {
+    width: 105px;
+    height: 105px;
+    background: white;
+    position: absolute;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    
+    & > img {
+      border-radius: 50%;
+    }
+  }
+
+  .name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    
+
+    .name-age {
+      display: flex;
+      font-size: 0.7em;
+      margin-bottom: 1em;
+
+      & > .age {
+        margin-left: 0.5em;
+        color: $secondary-text-color;
+        font-weight: map-get($font-weight, regular);
+      }
+    }
+
+    .city {
+      color: $secondary-text-color;
+      font-weight: map-get($font-weight, regular);
+      font-size: 1em;
+    }
+  }
+
+  .stats-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.151);
+    padding: 1.5em;
+
+    .followers, .likes, .photos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .followers > h1, .likes > h1, .photos > h1 {
+      font-size: 18px;
+      margin-bottom: 0.5em;
+    }
+    .followers > p, .likes > p, .photos > p {
+      font-size: 12px;
+      color: $tertiary-text-color;
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  body {
+    background-size: 200vh, 200vh;
+    background-position-y: -10vh, 30vh;
+    background-position-x: -10vw, 20vw;
+  }
+  .card-container {
+    width: 90%;
+
+    & > img {
+      width: 100%;
+    }
+  }
+}
+
